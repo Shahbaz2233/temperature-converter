@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(234, 0, 255, 0.997);
+  }
+.container{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background-color: rgba(183, 255, 0, 0.162);
+    box-shadow: 0px 0px 5px black;
+    border-radius: 4px;
+    width: 80vw;
+    height: 60vh;
+    margin: 50px auto;
+}
+h1{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+}
+.input-box{
+        text-align: center;
+}
+#celcious, #ferhanide{
+    padding: 10px;
+    margin: 5px 5px;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+}
+
+@media screen and (max-width: 470px) {
+    h1{
+    font-size: 2rem;
+}
+    #celcious, #ferhanide{
+    width: 80%;   
+}
+}
+
+    </style>
+</head>
+<body>
+    <h1>Temperature Converter</h1>
+    <div class="container">
+<div class ="input-box">
+    <input type="number" value="0" id="celcious">
+    <input type="number" value="32" id="ferhanide">
+</div>
+    </div>
+
+    <script>
+var cel = document.getElementById("celcious");
+var fer = document.getElementById("ferhanide");
+cel.addEventListener("input", function(){
+let c = this.value;
+let f = (c * 9/5) + 32;
+f.toFixed(4);
+fer.value = f;
+
+});
+fer.addEventListener("input", function(){
+    let f = this.value;
+    let c = (f - 32) * 5/9;
+    c.toFixed(4);
+    cel.value = c;
+});
+console.log(cel)
+    </script>
+</body>
+</html>
